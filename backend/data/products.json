@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "name": "AeroSprint Black Running Shoes",
+    "category": "Shoes",
+    "price": 2499,
+    "description": "Lightweight black running shoes with breathable mesh upper, flexible rubber sole, and high responsiveness.",
+    "image": "assets/products/shoe1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "UrbanFlex White Casual Sneakers",
+    "category": "Shoes",
+    "price": 3299,
+    "description": "Classic white leather casual sneakers featuring cushioned insoles and sleek minimalist design.",
+    "image": "assets/products/shoe2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "TrailBlazer Red Sports Shoes",
+    "category": "Shoes",
+    "price": 3899,
+    "description": "Durable trail running shoes with aggressive tread pattern, reinforced toe box, and high shock absorption.",
+    "image": "assets/products/shoe3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Veloce Blue Training Sneakers",
+    "category": "Shoes",
+    "price": 2799,
+    "description": "Versatile blue cross-training athletic shoes suitable for gym workouts, cardio sessions, and everyday wear.",
+    "image": "assets/products/shoe4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Monarch Brown Leather Formal Oxfords",
+    "category": "Shoes",
+    "price": 4500,
+    "description": "Premium brown leather formal Oxford shoes with handcrafted stitching, cushioned lining, and anti-slip sole.",
+    "image": "assets/products/shoe5.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Chronos Stealth Black Digital Watch",
+    "category": "Watches",
+    "price": 2199,
+    "description": "Rugged black digital chronograph watch with water resistance, alarm mode, and green LED backlight display.",
+    "image": "assets/products/watch1.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Aura Silver Stainless Steel Analog Watch",
+    "category": "Watches",
+    "price": 4999,
+    "description": "Elegant silver analog watch with deep blue dial, stainless steel link strap, and automatic date indicator.",
+    "image": "assets/products/watch2.jpg"
+  },
+  {
+    "id": 8,
+    "name": "FitPulse Pro Smartwatch",
+    "category": "Watches",
+    "price": 3499,
+    "description": "Advanced smartwatch featuring HD AMOLED touch display, heart rate tracking, SpO2 sensor, and sport modes.",
+    "image": "assets/products/watch3.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Heritage Rose Gold Vintage Wristwatch",
+    "category": "Watches",
+    "price": 5299,
+    "description": "Sophisticated rose gold wrist watch with genuine leather strap, minimalist dial, and precise quartz movement.",
+    "image": "assets/products/watch4.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Titanium Sport GPS Smartwatch",
+    "category": "Watches",
+    "price": 6800,
+    "description": "Premium sport smartwatch with lightweight titanium casing, built-in GPS, offline maps, and 7-day battery life.",
+    "image": "assets/products/watch5.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Voyager Blue Waterproof Laptop Backpack",
+    "category": "Bags",
+    "price": 1899,
+    "description": "Spacious blue travel backpack with padded laptop sleeve, water-resistant fabric, and ergonomic shoulder straps.",
+    "image": "assets/products/bag1.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Executive Brown Leather Messenger Bag",
+    "category": "Bags",
+    "price": 3799,
+    "description": "Stylish brown genuine leather messenger bag designed for office professionals, laptops, and document organization.",
+    "image": "assets/products/bag2.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Urban Pulse Black Gym Duffel Bag",
+    "category": "Bags",
+    "price": 1499,
+    "description": "Compact black sports duffel bag featuring dedicated ventilated shoe compartment and adjustable shoulder strap.",
+    "image": "assets/products/bag3.jpg"
+  },
+  {
+    "id": 14,
+    "name": "EcoCanvas Olive Crossbody Sling Bag",
+    "category": "Bags",
+    "price": 1299,
+    "description": "Lightweight canvas crossbody sling bag with multi-zipper compartments for urban travel and daily essentials.",
+    "image": "assets/products/bag4.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Nomad Tactical Black Travel Rucksack",
+    "category": "Bags",
+    "price": 2999,
+    "description": "Heavy-duty tactical travel backpack with MOLLE webbing, 45L capacity, and compression straps for outdoor hiking.",
+    "image": "assets/products/bag5.jpg"
+  },
+  {
+    "id": 16,
+    "name": "SoundBass Wireless ANC Headphones",
+    "category": "Electronics",
+    "price": 4299,
+    "description": "Matte black active noise-canceling wireless bluetooth over-ear headphones with deep bass and 40h playtime.",
+    "image": "assets/products/electronics1.jpg"
+  },
+  {
+    "id": 17,
+    "name": "AcousticPods True Wireless Earbuds",
+    "category": "Electronics",
+    "price": 2499,
+    "description": "Compact white TWS earbuds featuring touch controls, environmental noise cancellation, and IPX5 splash protection.",
+    "image": "assets/products/electronics2.jpg"
+  },
+  {
+    "id": 18,
+    "name": "BoomCube Portable Bluetooth Speaker",
+    "category": "Electronics",
+    "price": 1999,
+    "description": "Waterproof portable bluetooth speaker delivering punchy 360-degree audio, RGB lighting, and 12-hour battery life.",
+    "image": "assets/products/electronics3.jpg"
+  },
+  {
+    "id": 19,
+    "name": "VisionHD 4K Waterproof Action Camera",
+    "category": "Electronics",
+    "price": 6499,
+    "description": "Compact ultra HD 4K action camera with dual color screens, EIS gyro stabilization, and waterproof housing up to 30m.",
+    "image": "assets/products/electronics4.jpg"
+  },
+  {
+    "id": 20,
+    "name": "PowerMax 20000mAh Fast Charging Power Bank",
+    "category": "Electronics",
+    "price": 1699,
+    "description": "High-capacity power bank featuring dual USB-C Power Delivery ports, digital LED battery readout, and 22.5W fast charge.",
+    "image": "assets/products/electronics5.jpg"
+  },
+  {
+    "id": 21,
+    "name": "Midnight Navy Fleece Pullover Hoodie",
+    "category": "Clothing",
+    "price": 1799,
+    "description": "Cozy navy blue fleece pullover hoodie with adjustable drawstring hood, ribbed cuffs, and front kangaroo pocket.",
+    "image": "assets/products/clothing1.jpg"
+  },
+  {
+    "id": 22,
+    "name": "Classic White Heavyweight Crew Tee",
+    "category": "Clothing",
+    "price": 899,
+    "description": "100% combed cotton white crewneck t-shirt with relaxed fit, durable double-stitched hem, and smooth texture.",
+    "image": "assets/products/clothing2.jpg"
+  },
+  {
+    "id": 23,
+    "name": "Rugged Denim Blue Trucker Jacket",
+    "category": "Clothing",
+    "price": 3199,
+    "description": "Vintage dark wash blue denim jacket featuring chest button flap pockets and classic waist adjustment tabs.",
+    "image": "assets/products/clothing3.jpg"
+  },
+  {
+    "id": 24,
+    "name": "Urban Olive Tactical Cargo Trousers",
+    "category": "Clothing",
+    "price": 2299,
+    "description": "Utility olive green cargo pants with expandable side tactical pockets and comfortable stretch cotton fabric.",
+    "image": "assets/products/clothing4.jpg"
+  },
+  {
+    "id": 25,
+    "name": "Charcoal Black Athletic Tracksuit",
+    "category": "Clothing",
+    "price": 2999,
+    "description": "Sporty charcoal black full-zip track jacket and matching track pants crafted with quick-dry breathable fabric.",
+    "image": "assets/products/clothing5.jpg"
+  },
+  {
+    "id": 26,
+    "name": "Polarized Gold Metal Aviator Sunglasses",
+    "category": "Accessories",
+    "price": 1499,
+    "description": "Classic gold metal frame aviator sunglasses featuring dark polarized lenses with 100% UV400 sun protection.",
+    "image": "assets/products/accessory1.jpg"
+  },
+  {
+    "id": 27,
+    "name": "Vintage Brown Leather Bifold Wallet",
+    "category": "Accessories",
+    "price": 1199,
+    "description": "Handcrafted vintage brown genuine leather wallet with built-in RFID blocking shield and multiple card slots.",
+    "image": "assets/products/accessory2.jpg"
+  },
+  {
+    "id": 28,
+    "name": "Titanium Minimalist Key Organizer Holder",
+    "category": "Accessories",
+    "price": 799,
+    "description": "Compact matte black key organizer holder that eliminates noisy key jingling and holds up to 8 keys neatly.",
+    "image": "assets/products/accessory3.jpg"
+  },
+  {
+    "id": 29,
+    "name": "Matte Black Stainless Insulated Flask",
+    "category": "Accessories",
+    "price": 999,
+    "description": "Double-wall vacuum insulated 750ml stainless steel water bottle keeping drinks icy cold for 24 hours.",
+    "image": "assets/products/accessory4.jpg"
+  },
+  {
+    "id": 30,
+    "name": "Reversible Genuine Leather Dress Belt",
+    "category": "Accessories",
+    "price": 1299,
+    "description": "Dual-sided black and dark brown leather dress belt with rotatable polished metal alloy buckle.",
+    "image": "assets/products/accessory5.jpg"
+  }
+]

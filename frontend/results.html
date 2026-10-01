@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Catalog | AURA Studio</title>
+  <meta name="description" content="Visual and semantic search results catalog based on neural similarity matching.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="results">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="logo-container">
+      <div class="logo-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+        </svg>
+      </div>
+      <span class="logo-text">AURA STUDIO</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Discover</a></li>
+      <li><a href="results.html" class="active">Catalog</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="main-container">
+
+    <!-- Results Header -->
+    <header class="results-header">
+      <div class="search-summary">
+        <h1 style="font-family: 'Outfit', sans-serif; font-size: 1.8rem; font-weight: 800;">Catalog Discovery</h1>
+        <div class="query-chip-group">
+          <span style="font-size: 0.85rem; color: var(--text-muted);">Active Search:</span>
+          <span class="query-chip" id="queryBadge">All Products</span>
+          <img id="uploadedThumb" class="uploaded-thumb" src="" alt="Query reference image" style="display: none;">
+        </div>
+      </div>
+      <div id="resultCount" style="font-weight: 600; color: var(--text-muted); font-size: 0.9rem;">
+        Loading products...
+      </div>
+    </header>
+
+    <!-- Main Content Layout with Filters Sidebar -->
+    <div class="results-content-wrapper">
+
+      <!-- Filters Sidebar -->
+      <aside class="filters-sidebar">
+        <h2 class="filter-title">Filter Results</h2>
+
+        <!-- Category Filter -->
+        <div class="filter-group">
+          <label class="filter-label" for="categoryFilter">Category</label>
+          <select id="categoryFilter" class="filter-select">
+            <option value="All">All Categories</option>
+            <option value="Shoes">Footwear (Shoes)</option>
+            <option value="Watches">Watches</option>
+            <option value="Bags">Bags & Carry</option>
+            <option value="Electronics">Audio & Electronics</option>
+            <option value="Clothing">Apparel (Clothing)</option>
+            <option value="Accessories">Accessories</option>
+          </select>
+        </div>
+
+        <!-- Price Range Filter -->
+        <div class="filter-group">
+          <label class="filter-label">Price Limit (₹)</label>
+          <div class="price-range-inputs">
+            <input type="number" id="minPrice" class="filter-input" placeholder="Min" min="0" value="0">
+            <span style="color: var(--text-dim);">–</span>
+            <input type="number" id="maxPrice" class="filter-input" placeholder="Max" min="0" value="10000">
+          </div>
+        </div>
+
+        <!-- Similarity Score Filter -->
+        <div class="filter-group">
+          <label class="filter-label" for="minSimilarity">Match Precision: <span id="similarityVal" style="color: var(--accent-emerald);">0%</span></label>
+          <input type="range" id="minSimilarity" min="0" max="100" value="0" style="width: 100%; accent-color: var(--accent-emerald);">
+        </div>
+
+        <button type="button" class="btn-filter-apply" id="applyFiltersBtn">Apply Filters</button>
+      </aside>
+
+      <!-- Products Grid -->
+      <section class="products-grid" id="productsGrid">
+        <!-- Rendered dynamically by script.js -->
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="ai-spinner"></div>
+    <div class="loading-text" id="loadingText">Fetching products...</div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>AURA Commerce Engine &copy; 2026 | Visual & Semantic Product Intelligence</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
