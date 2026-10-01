@@ -1,31 +1,37 @@
-# Multimodal Product Search Engine
+<div align="center">
 
-An AI-powered e-commerce search engine that uses **Deep Learning (CLIP & FAISS)** to understand both **images and natural language text** to search for visually and semantically similar products.
+# 🔍 Multimodal Product Search Engine
 
-![Multimodal Product Search Engine](https://img.shields.io/badge/AI-CLIP%20%2B%20FAISS-10b981?style=for-the-badge)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+### AI-Powered Visual & Semantic Product Search
 
----
+<img src="https://readme-typing-svg.demolab.com/?lines=Search+by+image.+Search+by+text.;Or+both+at+once.&amp;center=true&amp;width=420&amp;height=35&amp;color=10B981&amp;vCenter=true&amp;size=18" />
 
-## 📌 Project Overview
+<img src="https://img.shields.io/badge/AI-CLIP_%2B_FAISS-10b981?style=for-the-badge" />
+<img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&amp;logo=fastapi&amp;logoColor=white" />
+<img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&amp;logo=pytorch&amp;logoColor=white" />
 
-Traditional search engines rely purely on exact keyword matching. If a user has an image of a shoe or wants to search using a combination like *"find shoes like this image but under ₹3000"*, traditional search fails.
+</div>
 
-This project demonstrates how **Contrastive Language–Image Pre-training (CLIP)** maps both images and text into a shared 512-dimensional vector space. Using **FAISS (Facebook AI Similarity Search)**, the system performs ultra-fast vector similarity search to return the most relevant products instantly.
+<br>
 
----
+An AI-powered e-commerce search engine using **Deep Learning (CLIP & FAISS)** to understand both images and natural language, returning visually and semantically similar products — including queries like *"find shoes like this image but under ₹3000"* that keyword search can't handle.
+
+CLIP (Contrastive Language–Image Pre-training) maps images and text into a shared 512-dimensional vector space. FAISS then performs ultra-fast vector similarity search to return the most relevant products instantly.
+
+<br>
 
 ## ✨ Features
 
-- **Text Search**: Search for products using natural language queries (e.g., *"black running shoes"*, *"casual white sneakers"*).
-- **Image Search**: Upload any image (JPG, JPEG, PNG) to find visually similar products from the database.
-- **Multimodal (Image + Text) Search**: Upload an image **and** type a text constraint at the same time (e.g., Upload a shoe image + Type *"under ₹3000"*).
-- **CLIP Vector Embeddings**: Uses OpenAI CLIP (`openai/clip-vit-base-patch32`) to project visual and textual features into normalized embeddings.
-- **FAISS Vector Indexing**: Pre-calculates and indexes product embeddings using FAISS `IndexFlatIP` (Cosine Similarity) for sub-millisecond retrieval.
-- **Interactive UI**: Sleek, modern dark-themed glassmorphism interface with drag-and-drop file upload, real-time image preview, filtering by category/price/similarity, and detailed product views.
+| | Feature | What it does |
+|:---:|---|---|
+| 💬 | **Text Search** | Natural language queries like *"black running shoes"* |
+| 🖼️ | **Image Search** | Upload a JPG/PNG to find visually similar products |
+| 🧩 | **Multimodal Search** | Image + text constraint together, e.g. a shoe photo + *"under ₹3000"* |
+| 🧠 | **CLIP Embeddings** | `openai/clip-vit-base-patch32` projects visual and text features into normalized vectors |
+| ⚡ | **FAISS Indexing** | `IndexFlatIP` (cosine similarity) for sub-millisecond retrieval |
+| 🎨 | **Interactive UI** | Dark glassmorphism design, drag-and-drop upload, live preview, filters |
 
----
+<br>
 
 ## 🏗️ Architecture & Data Flow
 
@@ -51,20 +57,51 @@ This project demonstrates how **Contrastive Language–Image Pre-training (CLIP)
          Frontend Web UI
 ```
 
----
+<br>
 
-## 📐 Multimodal Weighted Embedding Combination
+## 📐 Multimodal Weighted Embedding
 
-When a user provides both an **image** and a **text query**, the engine combines their embeddings using a weighted sum:
+When both an image and a text query are given, their embeddings combine as a weighted sum, then get L2-normalized before querying FAISS:
 
 $$\text{final\_embedding} = (\text{image\_embedding} \times \text{image\_weight}) + (\text{text\_embedding} \times \text{text\_weight})$$
 
-* Default Weights: `image_weight = 0.6`, `text_weight = 0.4`
-* The resulting vector is **L2-normalized** before querying the FAISS vector index.
+Default weights: `image_weight = 0.6`, `text_weight = 0.4`
 
----
+<br>
 
-## 📂 Folder Structure
+## 🔌 API Endpoints
+
+| Method | Endpoint | Description |
+|:---:|---|---|
+| `GET` | `/` | Health check — confirms the API is running |
+| `POST` | `/search/text` | Text query search, returns ranked matches with similarity scores |
+| `POST` | `/search/image` | Image upload search, ranked by visual similarity |
+| `POST` | `/search/multimodal` | Combined image + text search |
+| `GET` | `/products` | Returns all products in the dataset |
+| `GET` | `/products/{product_id}` | Returns details for a single product |
+
+<details>
+<summary><b>📦 Example payloads</b></summary>
+<br>
+
+**Text search**
+```json
+{ "query": "black running shoes", "top_k": 10 }
+```
+
+**Multimodal search** (form data)
+```
+image: <file>  (optional)
+query: "under ₹3000"  (optional)
+image_weight: 0.6
+text_weight: 0.4
+```
+
+</details>
+
+<br>
+
+## 📁 Project Structure
 
 ```text
 multimodal-product-search/
@@ -79,9 +116,9 @@ multimodal-product-search/
 │
 ├── backend/
 │   ├── main.py            # FastAPI Entrypoint, CORS & Static Mounts
-│   ├── models/            # Pydantic Request/Response Data Schemas
-│   ├── routes/            # Search & Product API Endpoints
-│   ├── services/          # SearchService wrapping AI Engine & Index
+│   ├── models/             # Pydantic Request/Response Data Schemas
+│   ├── routes/             # Search & Product API Endpoints
+│   ├── services/           # SearchService wrapping AI Engine & Index
 │   └── data/
 │       └── products.json  # 30 Sample E-commerce Products
 │
@@ -95,87 +132,22 @@ multimodal-product-search/
 └── README.md              # Documentation
 ```
 
----
-
-## ⚙️ Installation & Setup
-
-### 1. Prerequisites
-- Python 3.9+ installed on your system.
-
-### 2. Install Dependencies
-Navigate to the project directory and install the required Python packages:
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## 🚀 Running the Application
-
-### Step 1: Generate Product Embeddings & FAISS Index
-Before starting the server, run the offline indexing script to generate product vector embeddings:
-
-```bash
-python -m ai_engine.index
-```
-
-This generates `ai_engine/product_embeddings.npy` and `ai_engine/products.index`.
-
-### Step 2: Start the FastAPI Backend Server
-Launch the FastAPI development server with Uvicorn:
-
-```bash
-python backend/main.py
-```
-*or directly with Uvicorn:*
-```bash
-uvicorn backend.main:app --reload --port 8000
-```
-
-The API will be live at `http://127.0.0.1:8000`.
-
-### Step 3: Access the Frontend Web Application
-Open your web browser and navigate to:
-```text
-http://127.0.0.1:8000/static/index.html
-```
-*(or open `frontend/index.html` directly in your browser).*
-
----
-
-## 🔌 API Endpoints Documentation
-
-### Health Check
-- **`GET /`**
-  - **Description**: Verify backend status.
-  - **Response**: `{"message": "Multimodal Product Search API is running"}`
-
-### Text Search
-- **`POST /search/text`**
-  - **Payload**: `{"query": "black running shoes", "top_k": 10}`
-  - **Response**: List of top matching products with percentage similarity scores.
-
-### Image Search
-- **`POST /search/image`**
-  - **Form Data**: `image` (File), `top_k` (Integer, default 10)
-  - **Response**: Products ranked by visual feature similarity.
-
-### Multimodal Search
-- **`POST /search/multimodal`**
-  - **Form Data**: `image` (File, Optional), `query` (String, Optional), `image_weight` (0.6), `text_weight` (0.4)
-  - **Response**: Products matching combined visual and text representation.
-
-### Products API
-- **`GET /products`**: Returns list of all 30 products in the dataset.
-- **`GET /products/{product_id}`**: Returns details of a single product.
-
----
+<br>
 
 ## 🔮 Future Improvements
 
-1. **Larger Dataset Integration**: Scale dataset to 100,000+ products using HNSW FAISS indices.
-2. **Fine-Tuned Fashion CLIP**: Fine-tune CLIP on e-commerce product domain pairs for higher precision.
-3. **Personalized Recommender System**: Factor in user click history and price affinity alongside vector similarity.
-4. **Multilingual Search**: Extend support for multi-language product search using multilingual CLIP models.
-5. **Price & Attribute Hard Filtering**: Perform hybrid vector search with pre-filtering on price range, brand, and size.
+| Idea | Goal |
+|---|---|
+| **Larger Dataset** | Scale to 100,000+ products with HNSW FAISS indices |
+| **Fine-Tuned Fashion CLIP** | Higher precision on e-commerce product domain pairs |
+| **Personalized Recommender** | Factor in click history and price affinity |
+| **Multilingual Search** | Multi-language queries via multilingual CLIP models |
+| **Hybrid Filtering** | Vector search pre-filtered by price, brand and size |
+
+<br>
+
+<div align="center">
+
+*Multimodal Product Search: find it, however you describe it.*
+
+</div>
